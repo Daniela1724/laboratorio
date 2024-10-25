@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,14 +9,41 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
         }
         form {
-            display: flex;
-            flex-direction: column;
             max-width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        label, input, textarea {
+        label {
+            margin-bottom: 5px;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
             margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -29,16 +57,20 @@
         <input type="email" id="email" name="email" required>
 
         <label for="message">Mensaje:</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" rows="4" required></textarea>
 
         <button type="submit">Enviar</button>
     </form>
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Aquí puedes agregar la lógica para enviar el formulario a través de un servicio.
+            event.preventDefault(); // Evitar el envío por defecto
+
+            // Aquí puedes agregar la lógica para enviar el formulario a un servidor
             alert('Formulario enviado con éxito.');
+
+            // Opcional: limpiar el formulario
+            this.reset();
         });
     </script>
 </body>
